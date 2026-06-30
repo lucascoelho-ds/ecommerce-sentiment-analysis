@@ -29,18 +29,17 @@ df = pd.DataFrame(data)
 
 # 2
 # Analisando sentimento
-df['sentiment'] = df['text'].apply(lambda x:
+df['sentiment'] = df['text'].apply( lambda x: 
 TextBlob(x).sentiment.polarity)
 
-# Classificar o sentimento como positivo, neutro ou negativo
-df['sentiment_label'] = df['sentiment'].apply(lambda x: 'positivo' if x > 0
+df['sentiment_label'] = df['sentiment'].apply( lambda x: 'positivo' if x > 0
 else ('negativo' if x < 0 else 'neutro'))
 print(df)
 
 # 3
 # Contar a frequência de cada sentimento
 
-sentiment_counts = df['sentiment_label'].value_counts()
+sentiment_count = df['sentiment_label'].value_counts()
 
 # # Criar o gráfico de barras
 sentiment_counts.plot(kind='bar', color=['green', 'red', 'blue'])
