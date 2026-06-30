@@ -39,7 +39,7 @@ print(df)
 # 3
 # Contar a frequência de cada sentimento
 
-sentiment_count = df['sentiment_label'].value_counts()
+sentiment_counts = df['sentiment_label'].value_counts()
 
 # # Criar o gráfico de barras
 sentiment_counts.plot(kind='bar', color=['green', 'red', 'blue'])
